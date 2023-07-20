@@ -5,7 +5,7 @@
 * @n: int
 *Return: always 0.
 */
-void print_number(int n);
+void print_number(int n)
 {
 	unsigned int chi = n;
 
