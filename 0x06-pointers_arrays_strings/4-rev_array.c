@@ -1,15 +1,18 @@
 #include "main.h"
 /**
- * string_toupper - reverses the content of an array of integers
- * @a: str
+ * reverse_array -reverses the content of an array of integers
+ * @n: int
+ * @a: int
  * Return: void
  */
-char *string_toupper(char *a)
+void reverse_array(int *a, int n)
 {
-	int x;
+	int x, y;
 
-	for (x = 0; *(a + x); x++)
-		if (*(a + x) > 96 && *(a + x) < 123)
-			*(a + x) = *(a + x) - 32;
-	return (a);
+	for (x = 0; x < n / 2; x++)
+	{
+		y = *(a + x);
+		*(a + x) = *(a + n - 1 - x);
+		*(a + n - 1 - x) = y;
+	}
 }
