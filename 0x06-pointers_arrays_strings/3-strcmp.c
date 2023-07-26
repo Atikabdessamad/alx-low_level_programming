@@ -13,8 +13,8 @@ int _strcmp(char *s1, char *s2)
 	{
 		if (*s1 != *s2)
 		{
-			x = ((int)*s1 - 48);
-			break;
+			x = ((int)*s1 - 48) - ((int)*s2 - 48);
+			continue;
 		}
 		s1++;
 		s2++;
