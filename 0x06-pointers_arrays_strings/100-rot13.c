@@ -17,7 +17,7 @@ char *rot13(char *a)
 			if (*(a + x) == tab0[y])
 			{
 				*(a + x) = tab1[y];
-				continue;
+				break;
 			}
 		}
 	}
