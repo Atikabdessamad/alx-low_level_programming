@@ -8,8 +8,8 @@
  */
 void print_buffer(char *b, int size)
 {
-	int x, y, z = 0;
-	int p[] = {0, 0, 0, 0, 0, 0, 0, 0};
+	int x, y, num = 0;
+	int tab[] = {0, 0, 0, 0, 0, 0, 0, 0};
 
 	if (size <= 0)
 		printf("\n");
@@ -17,14 +17,14 @@ void print_buffer(char *b, int size)
 	{
 		for (y = 0; y < 8; y++)
 		{
-			if (p[y] == 0)
-				printf("%x", p[y]);
+			if (tab[y] == 0)
+				printf("%x", tab[y]);
 			else
 			{
-				z = z * 10 + p[y];
+				num = num * 10 + tab[y];
 			}
 		}
-		printf("%x", z);
+		printf("%x", num);
 		for (y = x; y < x + 10; y++)
 		{
 			if (y % 2 == 0)
