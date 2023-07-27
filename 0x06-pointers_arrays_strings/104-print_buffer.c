@@ -23,7 +23,7 @@ void print_buffer(char *b, int size)
 		printf("%08x: ", x);
 		for (z = 0; z < 10; z++)
 		{
-			if (x < y)
+			if (x + z < size)
 				printf("%02x", *(b + x + z));
 			else
 				printf("  ");
@@ -32,18 +32,15 @@ void print_buffer(char *b, int size)
 				printf(" ");
 			}
 		}
-		for (x = 0; z < y; z++)
+		for (z = 0; z < y; z++)
 		{
-			int c = *(b + x + z);
 
-			if (c < 32 || c > 132)
-			{
-				c = '.';
-			}
-			printf("%c", c);
+			int w = *(b + x + z);
+
+			printf("%c", w >= 32 && w <= 132 ? w : '.');
 		}
+
 		printf("\n");
 		x += 10;
 	}
 }
-
