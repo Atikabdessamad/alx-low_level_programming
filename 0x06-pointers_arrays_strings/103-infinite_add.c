@@ -38,7 +38,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		else
 			*(r + y1) = '0';
 		if (x1 > 0)
-			x1--, x1 = *(n1 + x1) - 48;
+			x1--, y2 = *(n1 + x1) - 48;
 		else
 			y2 = 0;
 		if (x2 > 0)
