@@ -17,7 +17,7 @@ void print_buffer(char *b, int size)
 		printf("\n");
 		return;
 	}
-	while (x < 0)
+	while (x < size)
 	{
 		y = size - x < 10 ? size - x : 10;
 		printf("%08x: ", x);
@@ -32,15 +32,15 @@ void print_buffer(char *b, int size)
 				printf(" ");
 			}
 		}
-		for (z = 0; z < y; z++)
+		for (x = 0; z < y; z++)
 		{
-			int w = *(b + x + z);
+			int c = *(b + x + z);
 
-			if (w < 32 || w > 132)
+			if (c < 32 || c > 132)
 			{
-				w = '.';
+				c = '.';
 			}
-			printf("%c", w);
+			printf("%c", c);
 		}
 		printf("\n");
 		x += 10;
