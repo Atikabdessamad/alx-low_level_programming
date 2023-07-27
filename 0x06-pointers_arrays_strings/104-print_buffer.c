@@ -8,34 +8,42 @@
  */
 void print_buffer(char *b, int size)
 {
-	int x, y, num = 0;
-	int tab[] = {0, 0, 0, 0, 0, 0, 0, 0};
+	int x, y, z;
+
+	x = 0;
 
 	if (size <= 0)
-		printf("\n");
-	for (x = 0; *(b + x); x++)
 	{
-		for (y = 0; y < 8; y++)
+		printf("\n");
+		return;
+	}
+	while (x < size)
+	{
+		y = size - x < 10 ? size - x : 10;
+		printf("%08x: ", x);
+		for (z = 0; z < 10; z++)
 		{
-			if (tab[y] == 0)
-				printf("%x", tab[y]);
+			if (x < y)
+				printf("%02x", *(b + x + z));
 			else
+				printf("  ");
+			if (z % 2)
 			{
-				num = num * 10 + tab[y];
+				printf(" ");
 			}
 		}
-		printf("%x", num);
-		for (y = x; y < x + 10; y++)
+		for (z = 0; z < y; z++)
 		{
-			if (y % 2 == 0)
-				printf(" ");
-			printf("%x", *(b + y));
-		}
-		for (y = x; y < x + 10; y++)
-		{
-			printf("%c", *(b + y));
+			int w = *(b + x + z);
+
+			if (w < 32 || w > 132)
+			{
+				w = '.';
+			}
+			printf("%c", w);
 		}
 		printf("\n");
-		x = x + 10;
+		x += 10;
 	}
 }
+
