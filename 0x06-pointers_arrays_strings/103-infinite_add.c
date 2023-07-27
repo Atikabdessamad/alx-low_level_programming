@@ -32,7 +32,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		if (y >= 10)
 			y4 = y / 10;
 		else
-			add = 0;
+			y4 = 0;
 		if (y > 0)
 		*(r + y1) = (y % 10) + 48;
 		else
