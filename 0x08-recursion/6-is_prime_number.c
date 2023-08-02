@@ -9,16 +9,18 @@
 
 int prime2(int n, int x)
 {
-	if (n % x == 0)
+	if (n < 0)
 		return (0);
-	else if (n == x)
+	else if ((x * x) > n)
 		return (1);
-	else
-		return (prime2(n, x + 1));
+	else if ((x * x) == n)
+		return (0);
+
+	return (prime2(n, x + 1));
 }
 
 /**
- * is_prime_number - returns 1 if the input integer is a prime number
+ * is_prime_number - Check if a number is prime
  * @n: int
  * Return: void
  */
