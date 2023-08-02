@@ -36,7 +36,7 @@ int _strlen_recursion(char *s)
 int is_palindrome(char *s)
 {
 	int x = _strlen_recursion(s) - 1;
-	int y = check_palindrome(0, y, s);
+	int y = check_palindrome(0, x, s);
 
 	if (y == 0)
 		return (0);
