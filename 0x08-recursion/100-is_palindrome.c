@@ -8,10 +8,10 @@
  */
 int check_palindrome(int start, int end, char *s)
 {
-	if (*(s + start) == *(s + end))
-		return (1 * check_palindrome(start + 1, end - 1, s));
 	if (start == end || start - 1 == end)
 		return (1);
+	if (*(s + start) == *(s + end))
+		return (1 * check_palindrome(start + 1, end - 1, s));
 	return (0);
 }
 
