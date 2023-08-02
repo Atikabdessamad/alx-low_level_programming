@@ -14,20 +14,6 @@ int check_palindrome(int start, int end, char *s)
 		return (1 * check_palindrome(start + 1, end - 1, s));
 	return (0);
 }
-
-/**
- *_strlen_recursion - Return the length of  str
- *@s: str
- *Return: void
- */
-int _strlen_recursion(char *s)
-{
-	if (*s == '\0')
-	{
-		return (0);
-	}
-	return (1 + _strlen_recursion(s + 1));
-}
 /**
  * is_palindrome - Check str is palindrome.
  * @s: String
@@ -43,3 +29,18 @@ int is_palindrome(char *s)
 	else
 		return (1);
 }
+
+/**
+ *_strlen_recursion - Return the length of  str
+ *@s: str
+ *Return: void
+ */
+int _strlen_recursion(char *s)
+{
+	if (*s == '\0')
+	{
+		return (0);
+	}
+	return (1 + _strlen_recursion(s + 1));
+}
+
