@@ -7,11 +7,8 @@
  */
 char *argstostr(int ac, char **av)
 {
-	char *ptr;
+	char *p;
 
-	(void)ac;
-	(void)av;
-
-	ptr = "R";
-	return (ptr);
+	p = "R";
+	return (p);
 }
