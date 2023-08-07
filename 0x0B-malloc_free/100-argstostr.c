@@ -9,6 +9,6 @@ char *argstostr(int ac, char **av)
 {
 	char *ptr;
 
-	ptr = 'X';
+	ptr = "X";
 	return (ptr);
 }
