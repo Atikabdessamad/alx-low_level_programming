@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * wrdcnt - Prints an array of string
+ * wrdcnt - count the number of string
  * @s: str
- * retur: void
+ * Return: void
  */
 int wrdcnt(char *s)
 {
@@ -12,13 +12,13 @@ int wrdcnt(char *s)
 
 	for (x = 0; s[x]; x++)
 	{
-		if (x == 0)
-			y++;
-		else if (s[x] == ' ')
+		if (s[x] == ' ')
 		{
 			if (s[x + 1] != ' ' && s[x + 1] != '\0')
 				y++;
 		}
+		else if (x == 0)
+			y++;
 	}
 	y++;
 	return (y);
