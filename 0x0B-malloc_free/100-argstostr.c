@@ -12,6 +12,6 @@ char *argstostr(int ac, char **av)
 	(void)ac;
 	(void)av;
 
-	ptr = "X";
+	ptr = "R";
 	return (ptr);
 }
