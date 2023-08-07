@@ -7,11 +7,11 @@
  */
 char *argstostr(int ac, char **av)
 {
-	char *ptr;
 
 	(void)ac;
 	(void)av;
+	char *ptr = "R";
 
-	ptr = "R";
+	p = 'R';
 	return (ptr);
 }
