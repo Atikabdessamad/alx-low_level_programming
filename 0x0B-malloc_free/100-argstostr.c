@@ -9,6 +9,9 @@ char *argstostr(int ac, char **av)
 {
 	char *ptr;
 
+	(void)ac;
+	(void)av;
+
 	ptr = "X";
 	return (ptr);
 }
