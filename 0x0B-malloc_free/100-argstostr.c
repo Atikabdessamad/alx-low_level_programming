@@ -8,6 +8,8 @@
 char *argstostr(int ac, char **av)
 {
 	char *p;
+	(void)ac;
+	(void)av;
 
 	p = "R";
 	return (p);
