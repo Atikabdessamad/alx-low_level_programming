@@ -1,25 +1,25 @@
 #include <stdlib.h>
 /**
- * array_range - creates an array of integers
- * @min: int
- * @max: int
- * Return: void
+ * array_range - creates an array of integers.
+ * @min: Integer
+ * @max: Integer
+ * Return: Tab of Integer
  */
 int *array_range(int min, int max)
 {
-	int *ptr;
-	int x, y;
+	int *p;
+	int i, count;
 
 	if (min > max)
 		return (0);
-	ptr = malloc((max - min) * sizeof(int) + (sizeof(int) * 1));
-	if (!ptr)
+	p = malloc((max - min) * sizeof(int) + (sizeof(int) * 1));
+	if (!p)
 		return (0);
-	min = y;
-	for (x = 0; x <= (max - min); x++)
+	count = min;
+	for (i = 0; i <= (max - min); i++)
 	{
-		*(ptr + x) = y;
-		y++;
+		*(p + i) = count;
+		count++;
 	}
-	return (ptr);
+	return (p);
 }
