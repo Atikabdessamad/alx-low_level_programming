@@ -1,56 +1,54 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 /**
- * length_of_argv - number length of argv
- * @tab: str
- * Return: void
- */
-int length_of_argv(char *tab)
+* is_valid_num - Check if a string contains only digits
+* @tab: str
+* Return: void
+*/
+int is_valid_num(char *tab)
 {
 	int x = 0;
 
-	while (*(tab + x))
+	while (tab[x])
+	{
+		if (tab[x] < '0' || tab[x] > '9')
+			return (0);
 		x++;
-	return (x);
+	}
+
+	return (1);
 }
+
 /**
- * main - multiplies two positive numbers
- * @argc: int
- * @argv: str
- * Return: void
- */
-int main(int argc, char *argv[])
+* main - multiplies two positive numbers
+* @argc: int
+* @argv: str
+* Return: void
+*/
+int main(int argc, char **argv)
 {
-	int x, y;
-	int x1, x2, xy_len;
-	int *ptr;
+	unsigned long x1, x2, res;
 
 	if (argc != 3)
 	{
 		printf("Error\n");
-		exit(98);
+		return (98);
 	}
-	for (x = 1; x < argc; x++)
+
+	if (!is_valid_num(argv[1]) || !is_valid_num(argv[2]))
 	{
-		for (y = 0; argv[x][y]; y++)
-		{
-			if (argv[x][y] < 48 || argv[x][y] > 57)
-			{
-				printf("Error\n");
-				exit(98);
-			}
-		}
+		printf("Error\n");
+		return (98);
 	}
+
 	x1 = strlen(argv[1]);
 	x2 = strlen(argv[2]);
-	xy_len = x2 + x1;
-	ptr = (int *)malloc(sizeof(int) * xy_len);
-	x = 0;
-	while (x < xy_len)
-	{
-		*(ptr + x) = 0;
-		x++;
-	}
+	res = x1 * x2;
+
+	printf("%lu\n", res);
+
 	return (0);
+
 }
