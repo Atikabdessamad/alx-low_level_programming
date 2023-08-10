@@ -45,12 +45,10 @@ int main(int argc, char *argv[])
 	x1 = strlen(argv[1]);
 	x2 = strlen(argv[2]);
 	xy_len = x2 + x1;
-	x = 0;
 	ptr = (int *)malloc(sizeof(int) * xy_len);
-	while (x < xy_len)
+	for (x = 0; x < xy_len; x++)
 	{
 		*(ptr + x) = 0;
-		x++;
 	}
 	return (0);
 }
