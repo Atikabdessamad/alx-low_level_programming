@@ -46,7 +46,11 @@ int main(int argc, char *argv[])
 	x2 = strlen(argv[2]);
 	xy_len = x2 + x1;
 	ptr = (int *)malloc(sizeof(int) * xy_len);
-	while (x = 0; x < xy_len; x++;)
+	x = 0;
+	while (x < xy_len)
+	{
 		*(ptr + x) = 0;
+		x++;
+	}
 	return (0);
 }
