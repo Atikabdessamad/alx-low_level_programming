@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 /**
  * length_of_argv - number length of argv
  * @tab: str
  * Return: void
  */
-int length_of_argv(*tab)
+int length_of_argv(char *tab)
 {
 	int x = 0;
 
@@ -22,7 +23,7 @@ int length_of_argv(*tab)
 int main(int argc, char *argv[])
 {
 	int x, y;
-	int x1, x2, y_len;
+	int x1, x2, xy_len;
 	int *ptr;
 
 	if (argc != 3)
@@ -41,15 +42,15 @@ int main(int argc, char *argv[])
 			}
 		}
 	}
-	ptr = (int *)malloc(sizeof(int) * x_len);
-	X1 = length_of_argv(argv[1]);
-	X2 = length_of_argv(argv[2]);
-	x_len = x2 + x1;
-	x = 0
-	while (x < x_len)
+	x1 = strlen(argv[1]);
+	x2 = strlen(argv[2]);
+	xy_len = x2 + x1;
+	x = 0;
+	ptr = (int *)malloc(sizeof(int) * xy_len);
+	while (x < xy_len)
 	{
 		*(ptr + x) = 0;
-		x++
+		x++;
 	}
 	return (0);
 }
