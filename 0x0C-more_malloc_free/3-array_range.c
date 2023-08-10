@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+/**
+ * array_range - creates an array of integers
+ * @min: int
+ * @max: int
+ * Return: void
+ */
+int *array_range(int min, int max)
+{
+	int *ptr;
+	int x, y;
+
+	if (!ptr)
+		return (0);
+	min = y;
+	if (max < min)
+		return (0);
+	ptr = malloc((max - min) * sizeof(int) + (sizeof(int) * 1));
+	for (x = 0; x <= (max - min); x++)
+	{
+		*(ptr + x) = y;
+		y++;
+	}
+	return (ptr);
+}
