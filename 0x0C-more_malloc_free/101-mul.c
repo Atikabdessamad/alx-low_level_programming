@@ -46,9 +46,7 @@ int main(int argc, char *argv[])
 	x2 = strlen(argv[2]);
 	xy_len = x2 + x1;
 	ptr = (int *)malloc(sizeof(int) * xy_len);
-	for (x = 0; x < xy_len; x++)
-	{
+	while (x = 0; x < xy_len; x++;)
 		*(ptr + x) = 0;
-	}
 	return (0);
 }
