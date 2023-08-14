@@ -1,11 +1,11 @@
 #include "dog.h"
 #include <stdlib.h>
 /**
- * new_dog - Create a new dog.
- * @name: String
+ * new_dog - Create a new dog
+ * @name: str
  * @age: float
- * @owner: string
- * Return: Type of dog
+ * @owner: str
+ * Return: ptr
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
@@ -22,21 +22,21 @@ dog_t *new_dog(char *name, float age, char *owner)
 		x1++;
 	while (*(owner + x2))
 		x2++;
-	d->name = malloc(x2 + 1);
-	d->owner = malloc(x1 + 1);
-	if (!(d->name) || !(d->owner))
+	ptr->name = malloc(x1 + 1);
+	ptr->owner = malloc(x2 + 1);
+	if (!(ptr->name) || !(ptr->owner))
 	{
-		free(d->name);
-		free(d->owner);
+		free(ptr->name);
+		free(ptr->owner);
 		free(ptr);
 		return (0);
 	}
-	for (x = 0; i < x1; x++)
-		(*d).name[x] = name[x];
+	for (x = 0; x < x1; x++)
+		(*ptr).name[x] = name[x];
 	(*ptr).name[x] = '\0';
 	for (x = 0; x < x2; x++)
 		(*ptr).owner[x] = owner[x];
 	(*ptr).owner[x] = '\0';
-	d->age = age;
+	ptr->age = age;
 	return (ptr);
 }
