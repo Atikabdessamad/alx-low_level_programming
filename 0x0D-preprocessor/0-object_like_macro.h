@@ -1,5 +1,4 @@
-#ifndef SIZE
-#define SIZE
+#ifndef Object-like Macro
 
 #define SIZE 1024
 
