@@ -18,7 +18,7 @@ va_start(x, n);
 
 for (y = 0; y < n; y++)
 {
-str = va_arg(x, char *);
+ptr = va_arg(x, char *);
 if (ptr == NULL)
 printf("(nil)");
 else
