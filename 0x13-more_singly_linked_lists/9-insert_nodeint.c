@@ -1,43 +1,43 @@
 #include "lists.h"
 /**
-* insert_nodeint_at_index - Insert a new node at given position of a listint
-* @head: Singly linked list
-* @idx: Integer
-* @n: Integer
-* Return: Singly Linked list
+* insert_nodeint_at_index - Insert new node at given position of listint
+* @head: ptr
+* @idx: Int
+* @n: Int
+* Return: ptr
 */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	unsigned int a = 1, b = 0;
-	listint_t *af_h, *bf_h, *h;
+	unsigned int x = 1, y = 0;
+	listint_t *aftr_hd, *bfr_hd, *hd;
 
 	if (!head)
 		return (0);
 	if (idx == 0)
 	{
-		h = (listint_t *)malloc(sizeof(listint_t));
-		if (!h)
+		hd = (listint_t *)malloc(sizeof(listint_t));
+		if (!hd)
 			return (0);
-		h->n = n, h->next = *head, *head = h;
-		return (h);
+		hd->n = n, hd->next = *head, *head = hd;
+		return (hd);
 	}
-	af_h = (*head)->next, bf_h = *head;
-	while (bf_h)
-		bf_h = bf_h->next, b++;
-	bf_h = *head;
-	if (idx > b)
+	aftr_hd = (*head)->next, bfr_hd = *head;
+	while (bfr_hd)
+		bfr_hd = bfr_hd->next, y++;
+	bfr_hd = *head;
+	if (idx > y)
 		return (0);
-	while (bf_h)
+	while (bfr_hd)
 	{
-		if (a == idx)
+		if (x == idx)
 		{
-			h = (listint_t *)malloc(sizeof(listint_t));
-			if (!h)
+			hd = (listint_t *)malloc(sizeof(listint_t));
+			if (!hd)
 				return (0);
-			h->next = af_h, h->n = n, bf_h->next = h;
-			return (h);
+			hd->next = aftr_hd, hd->n = n, bfr_hd->next = hd;
+			return (hd);
 		}
-		a++, af_h = af_h->next, bf_h = bf_h->next;
+		x++, aftr_hd = aftr_hd->next, bfr_hd = bfr_hd->next;
 	}
 	return (0);
 }
